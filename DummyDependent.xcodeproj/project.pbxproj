@@ -12,7 +12,6 @@
 		E29A36451F34478500C394BC /* DummyDependent.h in Headers */ = {isa = PBXBuildFile; fileRef = E29A36371F34478500C394BC /* DummyDependent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E29A364F1F34479200C394BC /* DummyDependent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A364E1F34479200C394BC /* DummyDependent.swift */; };
 		E29A36531F3448D000C394BC /* DummySugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E29A36521F3448D000C394BC /* DummySugar.framework */; };
-		E29A36541F3448DD00C394BC /* DummySugar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E29A36521F3448D000C394BC /* DummySugar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,19 +23,6 @@
 			remoteInfo = DummyDependent;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E29A36501F3448BA00C394BC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E29A36541F3448DD00C394BC /* DummySugar.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E29A36341F34478500C394BC /* DummyDependent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DummyDependent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +123,7 @@
 				E29A36301F34478500C394BC /* Frameworks */,
 				E29A36311F34478500C394BC /* Headers */,
 				E29A36321F34478500C394BC /* Resources */,
-				E29A36501F3448BA00C394BC /* CopyFiles */,
+				E29A36941F344CE400C394BC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -223,6 +209,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E29A36941F344CE400C394BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DummySugar.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DummySugar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E29A362F1F34478500C394BC /* Sources */ = {
